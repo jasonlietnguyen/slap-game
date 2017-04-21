@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,35 @@
   <link rel="stylesheet" href="asset/style.css">
   <title>Slap Game</title>
 </head>
-<body>
-  
+
+<body id="body">
+
+   <div class="result">
+    <h1>Health: <span id="result">100</span></h1>
+    <h1>Hits: <span id="hit">0</span></h1>
+  </div>
+
+  <div class="img">
+    <img src="http://stickmannews.weebly.com/uploads/6/8/6/8/6868615/9247904_orig.jpg" alt="" width="15%">
+  </div>
+
+  <div class="hit-button">
+    <button type="button" id="slap" onclick="damage('slap')">Slap</button>
+    <button type="button" id="punch" onclick="damage('punch')">Punch</button>
+    <button type="button" id="kick" onclick="damage('kick')">Kick</button>
+    <button type="button" id="reset" onclick="reset()">Reset</button>    
+  </div>
+
+  <div class="block-button">
+    <button type="button" id="armor" onclick="addMods('armor')">Armor</button>
+    <button type="button" id="shield" onclick="addMods('shield')">Shield</button>
+    <button type="button" id="forcefield" onclick="addMods('forcefield')">Forecefield</button>
+  </div>
+ 
+
+  <script src="app.js"></script>
+
+
 </body>
+
 </html>
