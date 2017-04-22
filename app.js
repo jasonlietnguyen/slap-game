@@ -52,38 +52,35 @@ function addMods(type) {
 
 
 function damage(hit) {
-  if (health >= 1) {
-    if (hit === "slap") {
-      health -= 1
-      health = Math.floor(health)
-      hits += 1
-      checkBlock()
-      dead()
+  // if (health >= 1) {
+  if (hit === "slap") {
+    health -= 1
+    hits += 1
+    checkBlock()
+    dead()
+  }
+  if (hit === "punch") {
+    if (health < 5) {
+      health = 0
+    } else {
+      health -= 5
     }
-    if ((hit === "punch")) {
-      hits += 1
-      health = Math.floor(health)
-      if (health < 5) {
-        health = 0
-      }else{
-        health -= 5
-      }
-      checkBlock()
-      dead()
+    hits += 1
+    checkBlock()
+    dead()
+  }
+  if (hit === "kick") {
+    if (health < 10) {
+      health = 0
+    } else {
+      health -= 10
     }
-    if ((hit === "kick")) {
-      hits += 1
-      health = Math.floor(health)
-      if (health < 10) {
-        health = 0
-      }else{
-        health -= 10
-      }
-      checkBlock()
-      dead()
-    }
+    hits += 1
+    checkBlock()
+    dead()
   }
 }
+// }
 
 
 function checkBlock() {
@@ -91,6 +88,7 @@ function checkBlock() {
     health += blockStrength
     block = false
   }
+  health = Math.round(health)
 }
 
 
